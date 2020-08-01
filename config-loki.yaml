@@ -26,10 +26,10 @@ schema_config:
 
 storage_config:
   boltdb:
-    directory: /tmp/promtail-loki/stuff/index
+    directory: /d/1d-mx/workspace/promtail-loki/stuff/index
 
   filesystem:
-    directory: /tmp/promtail-loki/stuff/chunks
+    directory: /d/1d-mx/workspace/promtail-loki/stuff/chunks
 
 limits_config:
   enforce_metric_name: false

@@ -3,7 +3,7 @@ server:
   grpc_listen_port: 0
 
 positions:
-  filename: /tmp/promtail/loki/stuff/positions.yaml
+  filename: /d/1d-mx/workspace/promtail-loki/stuff/positions.yaml
 
 clients:
   - url: http://127.0.0.1:3100/loki/api/v1/push
@@ -25,7 +25,7 @@ scrape_configs:
         - localhost
       labels:
         job: foo
-        __path__: /tmp/promtail-loki/mylog/folder1/*
+        __path__: /d/1d-mx/workspace/promtail-loki/mylog/folder1/*
 
   - job_name: bar
     static_configs:
@@ -33,4 +33,4 @@ scrape_configs:
        - localhost
       labels:
        job: bar
-       __path__: /tmp/promtail-loki/mylog/folder2/*
+       __path__: /d/1d-mx/workspace/promtail-loki/mylog/folder2/*

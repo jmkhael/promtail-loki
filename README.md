@@ -132,22 +132,20 @@ table_manager:
 
 ./bin/logcli labels 
 ./bin/logcli labels job
+./bin/logcli labels filename
 
 ./bin/logcli query '{job="foo"}'
 ./bin/logcli query '{job="bar"}'
 
-./bin/logcli query '{job="varlogs"}' --tail
-
-
 ./bin/logcli query '{job="foo", job="bar"}'
 ./bin/logcli query '{job="foo", job!~"bar"}'
 
-
-
 ./bin/logcli query '{job="bar"} |= "Hello"'
-./bin/logcli query '{job="bar"} |= "world"'
+./bin/logcli query '{job="foo"} |= "world"'
 
-./bin/logcli query '{job="bar"} |= "Hello" != "world"
+./bin/logcli query '{job="bar"} |= "Hello" != "grep"'
+
+./bin/logcli query '{job="varlogs"}' --tail
 
 ```
 
@@ -155,6 +153,15 @@ table_manager:
 
 # Reset
 > Delete `stuff` folder if you want to start over
+```
+kill -9 $(pgrep promtail)
+kill -9 $(pgrep loki)
+rm -rf stuff/*
+
+./bin/promtail -config.file config-promtail.yaml &
+
+./bin/loki -config.file config-loki.yaml &
+```
 
 ## URLS
 http://localhost:9080/targets
