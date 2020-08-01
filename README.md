@@ -140,3 +140,8 @@ table_manager:
 ```
 
 > Delete `stuff` folder if you want to start over
+
+## URLS
+http://localhost:9080/targets
+http://localhost:3100/metrics
+
