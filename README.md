@@ -2,6 +2,8 @@
 
 
 ```
+mkdir bin
+
 curl -fSL -o logcli.gz "https://github.com/grafana/loki/releases/download/v1.5.0/logcli-linux-amd64.zip"
 curl -fSL -o loki.gz "https://github.com/grafana/loki/releases/download/v1.5.0/loki-linux-amd64.zip"
 curl -fSL -o promtail.gz "https://github.com/grafana/loki/releases/download/v1.5.0/promtail-linux-amd64.zip"
@@ -11,11 +13,6 @@ gunzip loki.gz
 gunzip promtail.gz
 
 chmod +x loki promtail logcli
-
-mkdir bin
-mv loki bin
-mv promtail bin
-mv logcli bin
 ```
 
 config-promtail.yaml
@@ -145,7 +142,10 @@ table_manager:
 
 ./bin/logcli query '{job="bar"} |= "Hello" != "grep"'
 
-./bin/logcli query '{job="varlogs"}' --tail
+./bin/logcli query '{job="foo"}' --tail
+
+# In another shell
+echo "something to tale on $(date)" >> mylog/folder1/foo
 
 ```
 
