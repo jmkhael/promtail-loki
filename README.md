@@ -137,8 +137,23 @@ table_manager:
 ./bin/logcli query '{job="bar"}'
 
 ./bin/logcli query '{job="varlogs"}' --tail
+
+
+./bin/logcli query '{job="foo", job="bar"}'
+./bin/logcli query '{job="foo", job!~"bar"}'
+
+
+
+./bin/logcli query '{job="bar"} |= "Hello"'
+./bin/logcli query '{job="bar"} |= "world"'
+
+./bin/logcli query '{job="bar"} |= "Hello" != "world"
+
 ```
 
+> Check [LogQL](https://github.com/grafana/loki/blob/master/docs/sources/logql/_index.md) syntax
+
+# Reset
 > Delete `stuff` folder if you want to start over
 
 ## URLS
