@@ -3,6 +3,7 @@
 
 ```
 mkdir bin
+cd bin
 
 curl -fSL -o logcli.gz "https://github.com/grafana/loki/releases/download/v1.5.0/logcli-linux-amd64.zip"
 curl -fSL -o loki.gz "https://github.com/grafana/loki/releases/download/v1.5.0/loki-linux-amd64.zip"
