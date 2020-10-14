@@ -146,7 +146,7 @@ table_manager:
 ./bin/logcli query '{job="foo"}' --tail
 
 # In another shell
-echo "something to tale on $(date)" >> mylog/folder1/foo
+echo "something to tail on $(date)" >> mylog/folder1/foo
 
 ```
 
